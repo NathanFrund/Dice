@@ -9,34 +9,34 @@ Class {
 PolyhedralDiePoolTest >> testAddingTwiceTheSameDice [
 	"comment stating purpose of message"
 
-	| handle |
-	handle := PolyhedralDicePool new.
-	handle addDie: (PolyhedralDie withSides: 6).
-	self assert: handle diceCount equals: 1.
+	| pool |
+	pool := PolyhedralDicePool new.
+	pool addDie: (PolyhedralDie withSides: 6).
+	self assert: pool diceCount equals: 1.
 ]
 
 { #category : 'tests' }
 PolyhedralDiePoolTest >> testCreationAdding [
 	"comment stating purpose of message"
 
-	| handle |
-	handle := PolyhedralDicePool new 
+	| pool |
+	pool := PolyhedralDicePool new 
 		addDie: (PolyhedralDie withSides: 6);
 		addDie: (PolyhedralDie withSides: 10);
 		yourself.
-	self assert: handle diceCount equals: 2.
+	self assert: pool diceCount equals: 2.
 ]
 
 { #category : 'tests' }
 PolyhedralDiePoolTest >> testRoll [
 	"comment stating purpose of message"
 
-	| handle sum |
-	handle := PolyhedralDicePool new
+	| pool sum |
+	pool := PolyhedralDicePool new
 		addDie: (PolyhedralDie withSides: 6);
 		addDie: (PolyhedralDie withSides: 10);
 		yourself.
-	sum := handle roll.
+	sum := pool roll.
 	self assert: sum < 16
 ]
 
@@ -49,7 +49,7 @@ PolyhedralDiePoolTest >> testSimplePool [
 PolyhedralDiePoolTest >> testSumming [
 	"comment stating purpose of message"
 
-	| handle |
-	handle := 2 D20 + 3 D10.
-	self assert: handle diceCount equals: 5.
+	| pool |
+	pool := 2 D20 + 3 D10.
+	self assert: pool diceCount equals: 5.
 ]
