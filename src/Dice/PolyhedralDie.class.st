@@ -8,6 +8,15 @@ Class {
 	#package : 'Dice'
 }
 
+{ #category : 'as yet unclassified' }
+PolyhedralDie class >> withSides: anInteger [ 
+	"Create an initialize a new die with anInteger number of faces."
+	| instance |
+	instance := self new.
+	instance sides: anInteger.
+	^ instance
+]
+
 { #category : 'initialization' }
 PolyhedralDie >> initialize [
 	sides := 6
