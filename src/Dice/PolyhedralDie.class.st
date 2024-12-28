@@ -8,7 +8,7 @@ Class {
 	#package : 'Dice'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'initialization - data' }
 PolyhedralDie class >> withSides: anInteger [ 
 	"Create an initialize a new die with anInteger number of faces."
 	| instance |
