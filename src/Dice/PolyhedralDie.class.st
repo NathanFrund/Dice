@@ -1,9 +1,9 @@
+"
+The PolyhedralDie class represents the now classic array of multi-faceted dice used in roleplaying games such as Dungeons & Dragons.
+"
 Class {
 	#name : 'PolyhedralDie',
-	#superclass : 'Object',
-	#instVars : [
-		'sides'
-	],
+	#superclass : 'Die',
 	#category : 'Dice',
 	#package : 'Dice'
 }
@@ -15,22 +15,6 @@ PolyhedralDie class >> withSides: anInteger [
 	instance := self new.
 	instance sides: anInteger.
 	^ instance
-]
-
-{ #category : 'initialization' }
-PolyhedralDie >> initialize [
-	sides := 6
-]
-
-{ #category : 'action' }
-PolyhedralDie >> roll [ 
-	^ sides atRandom 
-]
-
-{ #category : 'accessing' }
-PolyhedralDie >> sides [
-
-	^ sides
 ]
 
 { #category : 'accessing' }

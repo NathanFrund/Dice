@@ -1,5 +1,8 @@
+"
+The DicePool class represents a handful of dice that are rolled together.
+"
 Class {
-	#name : 'PolyhedralDicePool',
+	#name : 'DicePool',
 	#superclass : 'Object',
 	#instVars : [
 		'dice'
@@ -9,45 +12,52 @@ Class {
 }
 
 { #category : 'arithmetic' }
-PolyhedralDicePool >> + somePolyhedralDice [ 
+DicePool >> + somePolyhedralDice [ 
 
 	| combinedDice |
-	combinedDice := PolyhedralDicePool new.
+	combinedDice := self class new.
 	self dice do: [ :die | combinedDice addDie: die ].
 	somePolyhedralDice dice do: [ :die | combinedDice addDie: die ].
 	^ combinedDice
 ]
 
-{ #category : 'accessing' }
-PolyhedralDicePool >> addDie: aDie [
+{ #category : 'adding' }
+DicePool >> addDie: aDie [
 	"Add a die to the pool of dice"
 
 	dice add: aDie
 ]
 
 { #category : 'accessing' }
-PolyhedralDicePool >> dice [
+DicePool >> dice [
 	^ dice
 ]
 
 { #category : 'accessing' }
-PolyhedralDicePool >> diceCount [
+DicePool >> diceCount [
 	"comment stating purpose of message"
 	^ dice size
 ]
 
 { #category : 'initialization' }
-PolyhedralDicePool >> initialize [
+DicePool >> initialize [
 
 	dice := OrderedCollection new.
 ]
 
-{ #category : 'accessing' }
-PolyhedralDicePool >> roll [
-	"roll a collection of dice and sum them"
+{ #category : 'action' }
+DicePool >> roll [
+	"roll a collection of dice so that each provides a value."
+	dice := dice collect: [ :die | die roll ].
 
+	^ self
+]
+
+{ #category : 'primitives - plugin' }
+DicePool >> sum [	
+	
 	| sum |
 	sum := 0.
-	dice do: [:polyhedralDie | sum := sum + polyhedralDie roll].
+	dice do: [:die | sum := sum + (die value)].
 	^ sum
 ]

@@ -10,7 +10,7 @@ PolyhedralDiePoolTest >> testAddingTwiceTheSameDice [
 	"comment stating purpose of message"
 
 	| pool |
-	pool := PolyhedralDicePool new.
+	pool := DicePool new.
 	pool addDie: (PolyhedralDie withSides: 6).
 	self assert: pool diceCount equals: 1.
 ]
@@ -20,7 +20,7 @@ PolyhedralDiePoolTest >> testCreationAdding [
 	"comment stating purpose of message"
 
 	| pool |
-	pool := PolyhedralDicePool new 
+	pool := DicePool new 
 		addDie: (PolyhedralDie withSides: 6);
 		addDie: (PolyhedralDie withSides: 10);
 		yourself.
@@ -32,11 +32,11 @@ PolyhedralDiePoolTest >> testRoll [
 	"comment stating purpose of message"
 
 	| pool sum |
-	pool := PolyhedralDicePool new
+	pool := DicePool new
 		addDie: (PolyhedralDie withSides: 6);
 		addDie: (PolyhedralDie withSides: 10);
 		yourself.
-	sum := pool roll.
+	sum := pool roll sum.
 	self assert: sum < 16
 ]
 

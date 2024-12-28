@@ -4,7 +4,7 @@ Extension { #name : 'Integer' }
 Integer >> D10 [
 	"Return a number of 10-sided dice related to self"
 	| dice |
-	dice := PolyhedralDicePool new.
+	dice := DicePool new.
 	self timesRepeat: [ dice addDie: (PolyhedralDie new sides: 10) ].
 	^ dice
 ]
@@ -13,7 +13,7 @@ Integer >> D10 [
 Integer >> D12 [
 	"Return a number of 20-sided dice related to self"
 	| dice |
-	dice := PolyhedralDicePool new.
+	dice := DicePool new.
 	self timesRepeat: [ dice addDie: (PolyhedralDie new sides: 12) ].
 	^ dice
 ]
@@ -22,7 +22,7 @@ Integer >> D12 [
 Integer >> D20 [
 	"Return a number of 20-sided dice related to self"
 	| dice |
-	dice := PolyhedralDicePool new.
+	dice := DicePool new.
 	self timesRepeat: [ dice addDie: (PolyhedralDie new sides: 20) ].
 	^ dice
 ]
@@ -31,7 +31,7 @@ Integer >> D20 [
 Integer >> D4 [
 	"Return a number of 4-sided dice related to self"
 	| dice |
-	dice := PolyhedralDicePool new.
+	dice := DicePool new.
 	self timesRepeat: [ dice addDie: (PolyhedralDie new sides: 4) ].
 	^ dice
 ]
@@ -40,7 +40,7 @@ Integer >> D4 [
 Integer >> D6 [
 	"Return a number of 6-sided dice related to self"
 	| dice |
-	dice := PolyhedralDicePool new.
+	dice := DicePool new.
 	self timesRepeat: [ dice addDie: (PolyhedralDie new sides: 6) ].
 	^ dice
 ]
@@ -49,7 +49,7 @@ Integer >> D6 [
 Integer >> D8 [
 	"Return a number of 8-sided dice related to self"
 	| dice |
-	dice := PolyhedralDicePool new.
+	dice := DicePool new.
 	self timesRepeat: [ dice addDie: (PolyhedralDie new sides: 8) ].
 	^ dice
 ]
@@ -58,7 +58,7 @@ Integer >> D8 [
 Integer >> DF [
 	"Return a number of fudge dice related to self"
 	| diePool |
-	diePool := FudgeDicePool new.
+	diePool := DicePool new.
 	self timesRepeat: [ diePool add: FudgeDie new ].
 	^ diePool
 ]

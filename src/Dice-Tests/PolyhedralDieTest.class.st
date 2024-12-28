@@ -19,5 +19,5 @@ PolyhedralDieTest >> testInitializeIsOk [
 PolyhedralDieTest >> testRolling [
 	| d |
 	d := PolyhedralDie new.
-	10 timesRepeat: [ self assert: (d roll between: 1 and: 6) ]
+	10 timesRepeat: [ self assert: (d roll value between: 1 and: 6) ]
 ]
