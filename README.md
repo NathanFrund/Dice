@@ -24,7 +24,7 @@ Metacello new	baseline: 'Dice';
 
 Roll a pool of two six-sided dice.
 ``` smalltalk
-    2 D6 roll sum.
+    2 D6 roll.
 ```
 
 Roll and sum.
