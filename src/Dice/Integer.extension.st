@@ -57,8 +57,8 @@ Integer >> D8 [
 { #category : '*Dice' }
 Integer >> DF [
 	"Return a number of fudge dice related to self"
-	| diePool |
-	diePool := DicePool new.
-	self timesRepeat: [ diePool add: FudgeDie new ].
-	^ diePool
+	| dice |
+	dice := DicePool new.
+	self timesRepeat: [ dice addDie: FudgeDie new ].
+	^ dice
 ]
