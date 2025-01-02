@@ -22,6 +22,11 @@ Metacello new	baseline: 'Dice';
 
 ## DSL usage
 
+Roll a pool of two six-sided dice.
+``` smalltalk
+    2 D6 roll sum.
+```
+
 Roll and sum.
 ``` smalltalk
     2 D6 roll sum.
@@ -29,7 +34,7 @@ Roll and sum.
 
 Roll and get an OrderedCollection of the dice rolled.
 ``` smalltalk
-    2 D6 roll.
+    2 D6 roll dice.
 ```
 
 Fudge dice are handled exactly like any other polyhedral die type.
